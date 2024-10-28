@@ -1,25 +1,72 @@
 import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-const Bottom = () => {
+const Bottom = ({ page }) => {
+  const navigate = useNavigate();
+
+  let heading;
+  let description;
+  switch (page) {
+    case "1":
+      heading = "Farming made easy";
+      description =
+        "Let us help you get started on your journey to becoming a plant parent in very little time.";
+      break;
+    case "2":
+      heading = "Harvesting becomes fun";
+      description =
+        "We have a team of experts to help keep the state of your farm healthy and diseases free.";
+      break;
+    case "3":
+      heading = "Boost your yields";
+      description =
+        "Become a successful farmer and make your efforts to the market.";
+      break;
+    default:
+      heading = "Farming made easy";
+      description =
+        "Let us help you get started on your journey to becoming a plant parent in very little time.";
+  }
+
   return (
     <div className="m-3 flex-grow flex items-center justify-center">
-      <div className="bg-[#024639] text-white p-5 rounded-3xl flex flex-col space-y-4">
-        <span className="text-[#eaf0ee]">Farming made easy</span>
-        <span className="text-gray-400">
-          Let us help you get started on your journey to becoming a plant parent
-          in very little time.
-        </span>
+      <div className="bg-[#024639] text-white p-6 rounded-3xl flex flex-col">
+        <span className="text-[#eaf0ee] text-lg">{heading}</span>
+        <span className="text-gray-400 text-md mt-4">{description}</span>
 
-        <div className="flex items-center h-full justify-between">
-          <div className="flex space-x-1">
-            <span className="border-b-green-400 border-b-4 w-7 rounded-sm" />
-            <span className="border-b-green-600 border-b-4 w-3 rounded-sm" />
-            <span className="border-b-green-600 border-b-4 w-3 rounded-sm" />
-          </div>
-          <div className="bg-green-600 rounded-full w-8 h-8 flex items-center justify-center">
-            <FaLongArrowAltRight />
-          </div>
+        <div className="flex items-center h-full justify-between mt-10">
+          {page < 3 ? (
+            <>
+              <div className="flex space-x-1.5">
+                <span
+                  className={`${
+                    page == 1
+                      ? "w-7 border-b-green-400"
+                      : "w-3 border-b-green-600"
+                  } border-b-4 rounded-sm`}
+                />
+                <span
+                  className={`${
+                    page == 2
+                      ? "w-7 border-b-green-400"
+                      : "w-3 border-b-green-600"
+                  } border-b-4 rounded-sm`}
+                />
+                <span className="border-b-green-600 border-b-4 w-3 rounded-sm" />
+              </div>
+              <div
+                className="bg-green-600 rounded-full w-10 h-10 flex items-center justify-center"
+                onClick={() => navigate(`/landing-page/${Number(page) + 1}`)}
+              >
+                <FaLongArrowAltRight />
+              </div>
+            </>
+          ) : (
+            <div className="bg-green-600 text-[#eaf0ee] w-full h-10 flex items-center justify-center rounded-xl">
+              Get Started
+            </div>
+          )}
         </div>
       </div>
     </div>

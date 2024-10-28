@@ -1,11 +1,11 @@
 import React from "react";
 import LanguageDropdown from "./LanguageDropdown";
 
-const Top = () => {
+const Top = ({ page }) => {
   return (
     <div className="flex mx-5 mt-5 items-center justify-between">
       <LanguageDropdown />
-      <span className="text-green-800 font-semibold">Skip</span>
+      {page < 3 && <span className="text-green-800 font-semibold">Skip</span>}
     </div>
   );
 };
