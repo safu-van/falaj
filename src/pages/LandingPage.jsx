@@ -5,11 +5,13 @@ import Bottom from "../components/landing/Bottom";
 
 const LandingPage = () => {
   return (
-    <>
+    <div className="flex flex-col h-screen">
       <Top />
-      <Middle />
-      <Bottom />
-    </>
+      <div className="flex-grow flex flex-col">
+        <Middle />
+        <Bottom />
+      </div>
+    </div>
   );
 };
 

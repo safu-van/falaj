@@ -1,11 +1,10 @@
 import React from "react";
-import { IoIosArrowRoundForward } from "react-icons/io";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 const Bottom = () => {
   return (
-    <div className="m-3">
-      <div className="bg-[#024639] text-white p-5 rounded-3xl h-[12.5rem] flex flex-col space-y-4">
+    <div className="m-3 flex-grow flex items-center justify-center">
+      <div className="bg-[#024639] text-white p-5 rounded-3xl flex flex-col space-y-4">
         <span className="text-[#eaf0ee]">Farming made easy</span>
         <span className="text-gray-400">
           Let us help you get started on your journey to becoming a plant parent
