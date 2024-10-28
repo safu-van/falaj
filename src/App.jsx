@@ -1,9 +1,9 @@
 import React from 'react'
-import Loader from './pages/Loader'
+import LandingPage from './pages/LandingPage'
 
 const App = () => {
   return (
-    <Loader />
+    <LandingPage />
   )
 }
 
