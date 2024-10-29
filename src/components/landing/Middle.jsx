@@ -19,7 +19,6 @@ const Middle = ({ page }) => {
         alt="image"
         className="w-96 h-96 transition-opacity duration-300"
       />
-      ;
     </div>
   );
 };

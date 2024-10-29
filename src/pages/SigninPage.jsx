@@ -5,7 +5,7 @@ import { TbLock } from "react-icons/tb";
 
 const SigninPage = () => {
   return (
-    <div className="flex flex-col h-screen my-2">
+    <div className="flex flex-col h-screen my-1">
       <TopLogo />
 
       <div className="flex flex-col flex-grow px-7">
