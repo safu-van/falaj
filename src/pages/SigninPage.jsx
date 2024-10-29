@@ -31,7 +31,7 @@ const SigninPage = () => {
           <span className="text-xs font-semibold">Forgot password?</span>
         </div>
 
-        <div className="flex-grow flex items-end">
+        <div className="flex-grow flex items-center">
           <button className="w-full h-12 bg-[#0ac540] text-white rounded-xl">
             Log in
           </button>
