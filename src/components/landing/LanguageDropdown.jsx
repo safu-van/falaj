@@ -43,7 +43,7 @@ const LanguageDropdown = () => {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-full mt-2 bg-white border border-gray-300 rounded-xl shadow-lg z-10 w-56 py-3">
+        <div className="absolute top-full mt-2 bg-white border border-gray-300 rounded-xl shadow-lg z-10 w-60 py-3">
           <ul className="space-y-1">
             {languages.map((language) => (
               <li
