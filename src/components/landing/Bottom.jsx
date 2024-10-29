@@ -5,29 +5,25 @@ import { useNavigate } from "react-router-dom";
 const Bottom = ({ page }) => {
   const navigate = useNavigate();
 
-  let heading;
-  let description;
-  switch (page) {
-    case "1":
-      heading = "Farming made easy";
-      description =
-        "Let us help you get started on your journey to becoming a plant parent in very little time.";
-      break;
-    case "2":
-      heading = "Harvesting becomes fun";
-      description =
-        "We have a team of experts to help keep the state of your farm healthy and diseases free.";
-      break;
-    case "3":
-      heading = "Boost your yields";
-      description =
-        "Become a successful farmer and make your efforts to the market.";
-      break;
-    default:
-      heading = "Farming made easy";
-      description =
-        "Let us help you get started on your journey to becoming a plant parent in very little time.";
-  }
+  const content = {
+    "1": {
+      heading: "Farming made easy",
+      description:
+        "Let us help you get started on your journey to becoming a plant parent in very little time.",
+    },
+    "2": {
+      heading: "Harvesting becomes fun",
+      description:
+        "We have a team of experts to help keep the state of your farm healthy and diseases free.",
+    },
+    "3": {
+      heading: "Boost your yields",
+      description:
+        "Become a successful farmer and make your efforts to the market.",
+    },
+  };
+
+  const { heading, description } = content[page] || content["1"];
 
   return (
     <div className="m-3 flex-grow flex items-center justify-center">
