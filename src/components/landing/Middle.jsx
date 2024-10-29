@@ -5,9 +5,9 @@ import image3 from "../../assets/landing/3.jpg";
 
 const Middle = ({ page }) => {
   const images = {
-    "1": image1,
-    "2": image2,
-    "3": image3,
+    1: image1,
+    2: image2,
+    3: image3,
   };
 
   const src = images[page] || image1;

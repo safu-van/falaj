@@ -1,10 +1,11 @@
 import React from "react";
-import LandingPage from "./pages/LandingPage";
 import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
 } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import SigninPage from "./pages/SigninPage";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -15,6 +16,10 @@ const App = () => {
     {
       path: "/landing-page/:page",
       element: <LandingPage />,
+    },
+    {
+      path: "/signin",
+      element: <SigninPage />,
     },
     {
       path: "*",

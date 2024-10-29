@@ -6,17 +6,17 @@ const Bottom = ({ page }) => {
   const navigate = useNavigate();
 
   const content = {
-    "1": {
+    1: {
       heading: "Farming made easy",
       description:
         "Let us help you get started on your journey to becoming a plant parent in very little time.",
     },
-    "2": {
+    2: {
       heading: "Harvesting becomes fun",
       description:
         "We have a team of experts to help keep the state of your farm healthy and diseases free.",
     },
-    "3": {
+    3: {
       heading: "Boost your yields",
       description:
         "Become a successful farmer and make your efforts to the market.",
@@ -59,7 +59,10 @@ const Bottom = ({ page }) => {
               </div>
             </>
           ) : (
-            <div className="bg-green-600 text-[#eaf0ee] w-full h-10 flex items-center justify-center rounded-xl">
+            <div
+              className="bg-green-600 text-[#eaf0ee] w-full h-10 flex items-center justify-center rounded-xl"
+              onClick={() => navigate("/signin")}
+            >
               Get Started
             </div>
           )}
