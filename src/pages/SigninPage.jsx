@@ -5,10 +5,10 @@ import { TbLock } from "react-icons/tb";
 
 const SigninPage = () => {
   return (
-    <div className="flex flex-col h-screen my-1">
+    <div className="flex flex-col h-screen">
       <TopLogo />
 
-      <div className="flex flex-col flex-grow px-7">
+      <div className="flex flex-col flex-grow px-7 mb-5">
         <div className="relative">
           <input
             type="text"
@@ -27,21 +27,21 @@ const SigninPage = () => {
           <TbLock className="absolute left-4 top-3 text-gray-700 text-2xl" />
         </div>
 
-        <div className="w-full flex justify-end mt-2">
+        <div className="w-full flex justify-end mt-1">
           <span className="text-xs font-semibold">Forgot password?</span>
         </div>
 
         <div className="flex-grow flex items-center">
-          <button className="w-full h-12 bg-[#0ac540] text-white rounded-xl">
+          <button className="w-full h-12 bg-green-600 text-white rounded-xl">
             Log in
           </button>
         </div>
 
-        <div className="h-16 flex justify-center items-center mt-2">
+        <div className="h-3 flex justify-center items-center mb-2">
           <span className="text-xs font-semibold">Or Log in with</span>
         </div>
 
-        <div className="w-full flex justify-between px-20 mt-2">
+        <div className="w-full flex space-x-4 justify-center px-20 mt-2">
           <div className="p-2 border-2 border-gray-200 rounded-xl flex items-center justify-center w-10 h-10">
             <svg className="w-6 h-6" viewBox="0 0 24 24">
               <path
@@ -87,7 +87,7 @@ const SigninPage = () => {
 
         <div className="flex justify-center mt-4 mb-4">
           <span className="text-xs font-semibold">
-            Don't have an account?
+            Don't have an account?&nbsp;
             <span className="text-green-500">Sign Up</span>
           </span>
         </div>

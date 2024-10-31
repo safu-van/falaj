@@ -52,7 +52,7 @@ const Bottom = ({ page }) => {
                 <span className="border-b-green-600 border-b-4 w-3 rounded-sm" />
               </div>
               <div
-                className="bg-green-600 rounded-full w-10 h-10 flex items-center justify-center"
+                className="bg-green-600 rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
                 onClick={() => navigate(`/landing-page/${Number(page) + 1}`)}
               >
                 <FaLongArrowAltRight />
@@ -60,7 +60,7 @@ const Bottom = ({ page }) => {
             </>
           ) : (
             <div
-              className="bg-green-600 text-[#eaf0ee] w-full h-10 flex items-center justify-center rounded-xl"
+              className="bg-green-600 text-[#eaf0ee] w-full h-10 flex items-center justify-center rounded-xl cursor-pointer"
               onClick={() => navigate("/signin")}
             >
               Get Started
