@@ -26,7 +26,11 @@ const App = () => {
       element: <Navigate to="/landing-page/1" />,
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <div className="md:px-[30rem] md:bg-gray-100">
+      <RouterProvider router={router} />
+    </div>
+  );
 };
 
 export default App;

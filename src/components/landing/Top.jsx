@@ -10,7 +10,7 @@ const Top = ({ page }) => {
       <LanguageDropdown />
       {page < 3 && (
         <span
-          className="text-green-800 font-semibold"
+          className="text-green-800 font-semibold cursor-pointer"
           onClick={() => navigate("/signin")}
         >
           Skip

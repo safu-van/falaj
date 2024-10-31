@@ -24,7 +24,7 @@ const SigninPage = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen bg-white">
       <TopLogo />
 
       <div className="flex flex-col flex-grow px-7 mb-5">
