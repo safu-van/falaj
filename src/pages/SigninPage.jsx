@@ -4,20 +4,21 @@ import { CgProfile } from "react-icons/cg";
 import { TbLock } from "react-icons/tb";
 import { HiEye } from "react-icons/hi2";
 import { RiErrorWarningLine, RiEyeCloseLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
 const SigninPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false);
+  const navigate = useNavigate()
 
   const handleSubmit = () => {
     if (
       (email === "admin@gmail.com" || email === "admin") &&
       password === "12345678"
     ) {
-      console.log("logged in");
-      setError(false);
+      navigate("/dashboard")
     } else {
       setError(true);
     }
