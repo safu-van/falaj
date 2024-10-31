@@ -2,6 +2,7 @@ import React from "react";
 import TopLogo from "../components/auth/TopLogo";
 import { CgProfile } from "react-icons/cg";
 import { TbLock } from "react-icons/tb";
+import { RiErrorWarningLine } from "react-icons/ri";
 
 const SigninPage = () => {
   return (
@@ -26,6 +27,12 @@ const SigninPage = () => {
           />
           <TbLock className="absolute left-4 top-3 text-gray-700 text-2xl" />
         </div>
+        {/* <div className="flex items-center space-x-1 px-2 pt-2">
+          <RiErrorWarningLine className="text-red-600" />
+          <div className="flex items-center text-[0.80rem] text-red-600">
+            Incorrect credentials
+          </div>
+        </div> */}
 
         <div className="w-full flex justify-end mt-1">
           <span className="text-xs font-semibold">Forgot password?</span>

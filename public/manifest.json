@@ -1,20 +1,28 @@
 {
-  "short_name": "Falaj",
   "name": "Falaj",
-  "icons": [
-    {
-      "src": "/logo/logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "/logo/logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
+  "short_name": "Falaj",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#024639",
   "theme_color": "#024639",
-  "background_color": "#024639"
+  "icons": [
+    {
+      "src": "/logo/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
 }
+
