@@ -27,7 +27,7 @@ const App = () => {
     },
   ]);
   return (
-    <div className="md:px-[30rem] md:bg-gray-100">
+    <div className="md:px-[35%] md:bg-gray-100">
       <RouterProvider router={router} />
     </div>
   );

@@ -26,8 +26,8 @@ const Bottom = ({ page }) => {
   const { heading, description } = content[page] || content["1"];
 
   return (
-    <div className="m-3 flex-grow flex items-center justify-center">
-      <div className="bg-[#024639] text-white p-6 rounded-3xl flex flex-col">
+    <div className="px-3 py-4 w-full flex-grow flex items-center justify-center">
+      <div className="bg-[#024639] text-white p-6 rounded-3xl flex flex-col w-full max-w-md">
         <span className="text-[#eaf0ee] text-lg">{heading}</span>
         <span className="text-gray-400 text-md mt-4">{description}</span>
 

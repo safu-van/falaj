@@ -8,7 +8,7 @@ const LandingPage = () => {
   const { page } = useParams();
 
   return (
-    <div className="flex flex-col h-screen bg-white">
+    <div className="flex flex-col h-screen bg-white overflow-hidden">
       <Top page={page} />
       <div className="flex-grow flex flex-col">
         <Middle page={page} />

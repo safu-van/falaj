@@ -13,11 +13,11 @@ const Middle = ({ page }) => {
   const src = images[page] || image1;
 
   return (
-    <div className="flex-grow flex items-center justify-center">
+    <div className="flex-grow flex items-center justify-center px-5 md:px-0">
       <img
         src={src}
         alt="image"
-        className="w-96 h-96 transition-opacity duration-300"
+        className="w-full max-w-[384px] h-auto transition-opacity duration-300"
       />
     </div>
   );
