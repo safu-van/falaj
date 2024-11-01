@@ -7,20 +7,34 @@ import { RiErrorWarningLine, RiEyeCloseLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
 const SigninPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setError("");
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   const handleSubmit = () => {
-    if (
-      (email === "admin@gmail.com" || email === "admin") &&
-      password === "12345678"
+    if (!formData.email || !formData.password) {
+      setError("Please fill out all fields");
+    } else if (
+      (formData.email === "admin@gmail.com" || formData.email === "admin") &&
+      formData.password === "12345678"
     ) {
       navigate("/dashboard");
+      setError("");
     } else {
-      setError(true);
+      setError("Invalid credentials");
     }
   };
 
@@ -33,9 +47,12 @@ const SigninPage = () => {
           <div className="relative">
             <input
               type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="border-2 border-gray-300 rounded-xl h-12 pl-12 pr-4 w-full text-sm focus:outline-none focus:border-2 focus:border-green-600"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className={`border-2 border-gray-300 rounded-xl h-12 pl-12 pr-4 w-full text-sm focus:outline-none focus:border-2 focus:border-green-600 ${
+                error && "border-red-600"
+              }`}
               placeholder="Username / Email"
             />
             <CgProfile className="absolute left-4 top-3 text-gray-700 text-2xl" />
@@ -44,9 +61,12 @@ const SigninPage = () => {
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="border-2 border-gray-300 rounded-xl h-12 pl-12 pr-12 w-full text-sm focus:outline-none focus:border-2 focus:border-green-600"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className={`border-2 border-gray-300 rounded-xl h-12 pl-12 pr-12 w-full text-sm focus:outline-none focus:border-2 focus:border-green-600 ${
+                error && "border-red-600"
+              }`}
               placeholder="Password"
             />
             <TbLock className="absolute left-4 top-3 text-gray-700 text-2xl" />
@@ -66,7 +86,7 @@ const SigninPage = () => {
             <div className="flex items-center space-x-1 px-2">
               <RiErrorWarningLine className="text-red-600" />
               <div className="flex items-center text-[0.80rem] text-red-600">
-                Invalid credentials
+                {error}
               </div>
             </div>
           )}

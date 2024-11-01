@@ -27,7 +27,7 @@ const Bottom = ({ page }) => {
 
   return (
     <div className="px-3 py-4 w-full flex-grow flex items-center justify-center">
-      <div className="bg-[#024639] text-white p-6 rounded-3xl flex flex-col w-full max-w-m">
+      <div className="bg-[#024639] text-white p-6 rounded-3xl flex flex-col w-full">
         <span className="text-[#eaf0ee] text-lg">{heading}</span>
         <span className="text-gray-400 text-md mt-4">{description}</span>
 
