@@ -11,7 +11,7 @@ import { NavLink } from "react-router-dom";
 const Home = () => {
   return (
     <div className="h-screen flex flex-col justify-between bg-[#e9eff5]">
-      <div className="bg-[#024639] w-full flex items-center px-5 py-3.5 rounded-b-2xl justify-between">
+      <div className="bg-[#024639] w-full flex items-center px-5 py-5 rounded-b-2xl justify-between">
         <span className="text-gray-300 text-md">
           Hello, <span className="text-white font-semibold text-xl">Admin</span>
         </span>
