@@ -4,12 +4,12 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const ExpenseChart = () => {
+const ExpenseChart = ({ expenseAmt }) => {
   const data = {
     labels: ["Water", "Electricity", "Fertilizer", "Other"],
     datasets: [
       {
-        data: [2000, 1900, 300, 250],
+        data: [2000, ...expenseAmt],
         backgroundColor: ["#4A90E2", "#F4D03F", "#58D68D", "#AAB7B8"],
         borderColor: ["#3498DB", "#F5B041", "#28B463", "#808B96"],
         borderWidth: 1,
