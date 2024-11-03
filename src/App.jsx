@@ -4,12 +4,14 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import Home from "./layout/Home";
 import LandingPage from "./pages/LandingPage";
 import SigninPage from "./pages/SigninPage";
-import Home from "./layout/Home";
 import Dashboard from "./pages/Dashboard";
-import AddExpense from "./pages/AddExpense";
-import ProtectedRoute from "./components/auth/ProtectedRoute";
+import AddExpensePage from "./pages/AddExpensePage";
+import NotificationPage from "./pages/NotificationPage";
+import SettingsPage from "./pages/SettingsPage";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -35,7 +37,15 @@ const App = () => {
         },
         {
           path: "add-expense",
-          element: <AddExpense />,
+          element: <AddExpensePage />,
+        },
+        {
+          path: "notification",
+          element: <NotificationPage />,
+        },
+        {
+          path: "settings",
+          element: <SettingsPage />,
         },
       ],
     },

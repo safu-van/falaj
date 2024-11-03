@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { usePersistedState } from "../hooks/usePersistedState";
 
-const AddExpense = () => {
+const AddExpensePage = () => {
   const [expenseType, setExpenseType] = useState("");
   const [amount, setAmount] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -84,4 +84,4 @@ const AddExpense = () => {
   );
 };
 
-export default AddExpense;
+export default AddExpensePage;

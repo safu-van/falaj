@@ -25,20 +25,6 @@ const BottomNavbar = () => {
           )}
         </NavLink>
         <NavLink
-          to="/notification"
-          className={({ isActive }) =>
-            isActive ? "bg-green-600 p-2 rounded-full" : ""
-          }
-        >
-          {({ isActive }) => (
-            <IoNotificationsOutline
-              className={`text-2xl ${
-                isActive ? "text-white" : "text-green-600"
-              }`}
-            />
-          )}
-        </NavLink>
-        <NavLink
           to="/dashboard/add-expense"
           className={({ isActive }) =>
             isActive ? "bg-green-600 p-2 rounded-full" : ""
@@ -52,7 +38,34 @@ const BottomNavbar = () => {
             />
           )}
         </NavLink>
-        <RiSettings4Line className="text-2xl text-green-600" />
+        <NavLink
+          to="/dashboard/notification"
+          className={({ isActive }) =>
+            isActive ? "bg-green-600 p-2 rounded-full" : ""
+          }
+        >
+          {({ isActive }) => (
+            <IoNotificationsOutline
+              className={`text-2xl ${
+                isActive ? "text-white" : "text-green-600"
+              }`}
+            />
+          )}
+        </NavLink>
+        <NavLink
+          to="/dashboard/settings"
+          className={({ isActive }) =>
+            isActive ? "bg-green-600 p-2 rounded-full" : ""
+          }
+        >
+          {({ isActive }) => (
+            <RiSettings4Line
+              className={`text-2xl ${
+                isActive ? "text-white" : "text-green-600"
+              }`}
+            />
+          )}
+        </NavLink>
       </div>
     </div>
   );
