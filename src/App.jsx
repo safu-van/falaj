@@ -8,6 +8,7 @@ import LandingPage from "./pages/LandingPage";
 import SigninPage from "./pages/SigninPage";
 import Home from "./layout/Home";
 import Dashboard from "./pages/Dashboard";
+import AddExpense from "./pages/AddExpense";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const App = () => {
         {
           index: true,
           element: <Dashboard />
+        },
+        {
+          path: "add-expense",
+          element: <AddExpense />
         }
       ]
     },

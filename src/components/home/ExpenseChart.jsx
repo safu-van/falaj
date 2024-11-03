@@ -6,12 +6,12 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const ExpenseChart = () => {
   const data = {
-    labels: ["Water", "Fertilizer", "Electricity", "Other"],
+    labels: ["Water", "Electricity", "Fertilizer", "Other"],
     datasets: [
       {
         data: [2000, 1900, 300, 250],
-        backgroundColor: ["#4A90E2", "#58D68D", "#F4D03F", "#AAB7B8"],
-        borderColor: ["#3498DB", "#28B463", "#F5B041", "#808B96"],
+        backgroundColor: ["#4A90E2", "#F4D03F", "#58D68D", "#AAB7B8"],
+        borderColor: ["#3498DB", "#F5B041", "#28B463", "#808B96"],
         borderWidth: 1,
       },
     ],
@@ -32,7 +32,6 @@ const ExpenseChart = () => {
       tooltip: {
         callbacks: {
           label: function (context) {
-            const label = context.label || '';
             const value = context.raw || 0;
             return `AED ${value.toLocaleString()}`;
           },

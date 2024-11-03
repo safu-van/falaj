@@ -1,10 +1,7 @@
 import React from "react";
-import { IoIosLogOut } from "react-icons/io";
+import { IoIosLogOut, IoIosAddCircleOutline } from "react-icons/io";
 import { GoHomeFill } from "react-icons/go";
-import {
-  IoNotificationsOutline,
-  IoChatbubbleEllipsesOutline,
-} from "react-icons/io5";
+import { IoNotificationsOutline } from "react-icons/io5";
 import { RiSettings4Line } from "react-icons/ri";
 import { NavLink, Outlet } from "react-router-dom";
 
@@ -32,6 +29,7 @@ const Home = () => {
             className={({ isActive }) =>
               isActive ? "bg-green-600 p-2 rounded-full" : ""
             }
+            end
           >
             {({ isActive }) => (
               <GoHomeFill
@@ -41,8 +39,34 @@ const Home = () => {
               />
             )}
           </NavLink>
-          <IoNotificationsOutline className="text-2xl text-green-600" />
-          <IoChatbubbleEllipsesOutline className="transform scale-x-[-1] text-2xl text-green-600" />
+          <NavLink
+            to="/notification"
+            className={({ isActive }) =>
+              isActive ? "bg-green-600 p-2 rounded-full" : ""
+            }
+          >
+            {({ isActive }) => (
+              <IoNotificationsOutline
+                className={`text-2xl ${
+                  isActive ? "text-white" : "text-green-600"
+                }`}
+              />
+            )}
+          </NavLink>
+          <NavLink
+            to="/dashboard/add-expense"
+            className={({ isActive }) =>
+              isActive ? "bg-green-600 p-2 rounded-full" : ""
+            }
+          >
+            {({ isActive }) => (
+              <IoIosAddCircleOutline
+                className={`text-2xl ${
+                  isActive ? "text-white" : "text-green-600"
+                }`}
+              />
+            )}
+          </NavLink>
           <RiSettings4Line className="text-2xl text-green-600" />
         </div>
       </div>
