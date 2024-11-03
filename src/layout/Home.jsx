@@ -13,7 +13,7 @@ import DonutChart from "../components/home/DonutChart";
 const Home = () => {
   return (
     <div className="h-screen flex flex-col bg-[#e9eff5]">
-      <div className="fixed top-0 left-0 right-0 w-full bg-[#024639] flex items-center px-5 py-5 rounded-b-2xl z-10 md:mx-auto md:max-w-[30%]">
+      <div className="fixed top-0 left-0 right-0 w-full bg-[#024639] flex items-center justify-between px-5 py-5 rounded-b-2xl z-10 md:mx-auto md:max-w-[30%]">
         <span className="text-gray-300 text-md">
           Hello, <span className="text-white font-semibold text-xl">Admin</span>
         </span>

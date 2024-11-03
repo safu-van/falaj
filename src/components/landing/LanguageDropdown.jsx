@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import uaeFlag from "../../assets/flag/uae.png";
 import ukFlag from "../../assets/flag/uk.png";
-import germanFlag from "../../assets/flag/germany.png";
+import pakistanFlag from "../../assets/flag/pakistan.png";
 import check from "../../assets/flag/check.png";
 
 const LanguageDropdown = () => {
@@ -15,7 +15,7 @@ const LanguageDropdown = () => {
   const languages = [
     { label: "EN", name: "English", flag: ukFlag },
     { label: "AR", name: "Arabic", flag: uaeFlag },
-    { label: "DE", name: "Deutsch", flag: germanFlag },
+    { label: "UR", name: "Urdu", flag: pakistanFlag },
   ];
 
   const handleLanguageChange = (language) => {
