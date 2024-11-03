@@ -6,9 +6,10 @@ import {
   LinearScale,
   BarElement,
   Title,
+  Tooltip,
 } from "chart.js";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
 
 const WaterChart = () => {
   const data = {
@@ -16,7 +17,7 @@ const WaterChart = () => {
     datasets: [
       {
         data: [10000, 20000, 50000, 40000, 30000],
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
+        backgroundColor: "#4A90E2",
       },
     ],
   };
@@ -34,6 +35,14 @@ const WaterChart = () => {
         padding: {
           top: 0,
           bottom: 10,
+        },
+      },
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            const value = context.raw || 0;
+            return `AED ${value.toLocaleString()}`;
+          },
         },
       },
     },

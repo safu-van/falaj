@@ -6,9 +6,7 @@ import {
   IoChatbubbleEllipsesOutline,
 } from "react-icons/io5";
 import { RiSettings4Line } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
-import WaterChart from "../components/home/WaterChart";
-import DonutChart from "../components/home/DonutChart";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -24,12 +22,7 @@ const Home = () => {
         className="flex-grow mt-20 mb-16 p-3 flex flex-col items-center overflow-y-auto"
         style={{ maxHeight: "calc(100vh - 160px)" }}
       >
-        <div className="w-full p-3 bg-white rounded-md shadow-md mb-5">
-          <WaterChart />
-        </div>
-        <div className="w-full p-3 bg-white rounded-md">
-          <DonutChart />
-        </div>
+        <Outlet />
       </div>
 
       <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-3xl py-3.5 z-10 md:mx-auto md:max-w-[30%]">

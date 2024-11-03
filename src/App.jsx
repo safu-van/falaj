@@ -7,6 +7,7 @@ import {
 import LandingPage from "./pages/LandingPage";
 import SigninPage from "./pages/SigninPage";
 import Home from "./layout/Home";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -21,6 +22,12 @@ const App = () => {
     {
       path: "/dashboard",
       element: <Home />,
+      children: [
+        {
+          index: true,
+          element: <Dashboard />
+        }
+      ]
     },
     {
       path: "/signin",

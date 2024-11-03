@@ -4,24 +4,14 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const DonutChart = () => {
+const ExpenseChart = () => {
   const data = {
     labels: ["Water", "Fertilizer", "Electricity", "Other"],
     datasets: [
       {
         data: [2000, 1900, 300, 250],
-        backgroundColor: [
-          "rgba(54, 162, 235, 0.6)",
-          "rgba(255, 206, 86, 0.6)",
-          "rgba(75, 192, 192, 0.6)",
-          "rgba(255, 99, 132, 0.6)",
-        ],
-        borderColor: [
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(255, 99, 132, 1)",
-        ],
+        backgroundColor: ["#4A90E2", "#58D68D", "#F4D03F", "#AAB7B8"],
+        borderColor: ["#3498DB", "#28B463", "#F5B041", "#808B96"],
         borderWidth: 1,
       },
     ],
@@ -39,10 +29,19 @@ const DonutChart = () => {
         font: { size: 15 },
         padding: { top: 0, bottom: 10 },
       },
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            const label = context.label || '';
+            const value = context.raw || 0;
+            return `AED ${value.toLocaleString()}`;
+          },
+        },
+      },
     },
   };
 
   return <Doughnut data={data} options={options} />;
 };
 
-export default DonutChart;
+export default ExpenseChart;
