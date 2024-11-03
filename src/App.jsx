@@ -9,6 +9,7 @@ import SigninPage from "./pages/SigninPage";
 import Home from "./layout/Home";
 import Dashboard from "./pages/Dashboard";
 import AddExpense from "./pages/AddExpense";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -22,17 +23,21 @@ const App = () => {
     },
     {
       path: "/dashboard",
-      element: <Home />,
+      element: (
+        <ProtectedRoute>
+          <Home />
+        </ProtectedRoute>
+      ),
       children: [
         {
           index: true,
-          element: <Dashboard />
+          element: <Dashboard />,
         },
         {
           path: "add-expense",
-          element: <AddExpense />
-        }
-      ]
+          element: <AddExpense />,
+        },
+      ],
     },
     {
       path: "/signin",

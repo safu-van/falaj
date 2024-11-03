@@ -4,9 +4,15 @@ import { CgProfile } from "react-icons/cg";
 import { TbLock } from "react-icons/tb";
 import { HiEye } from "react-icons/hi2";
 import { RiErrorWarningLine, RiEyeCloseLine } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import { getItem, setItem } from "../utils/localStorage";
 
 const SigninPage = () => {
+  const isAuthenticated = getItem("isAuthenticated");
+  if (isAuthenticated) {
+    return <Navigate to="/dashboard" />;
+  }
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -31,8 +37,8 @@ const SigninPage = () => {
       (formData.email === "admin@gmail.com" || formData.email === "admin") &&
       formData.password === "12345678"
     ) {
+      setItem("isAuthenticated", true);
       navigate("/dashboard");
-      setError("");
     } else {
       setError("Invalid credentials");
     }

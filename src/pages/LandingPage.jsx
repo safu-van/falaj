@@ -2,9 +2,15 @@ import React from "react";
 import Top from "../components/landing/Top";
 import Middle from "../components/landing/Middle";
 import Bottom from "../components/landing/Bottom";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
+import { getItem } from "../utils/localStorage";
 
 const LandingPage = () => {
+  const isAuthenticated = getItem("isAuthenticated");
+  if (isAuthenticated) {
+    return <Navigate to="/dashboard" />;
+  }
+
   const { page } = useParams();
 
   return (
