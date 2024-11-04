@@ -5,7 +5,7 @@ import BottomNavbar from "../components/home/BottomNavbar";
 
 const Home = () => {
   return (
-    <div className="h-screen flex flex-col bg-[#e9eff5]">
+    <div className="h-dvh flex flex-col bg-[#e9eff5]">
       <TopBar />
 
       <div

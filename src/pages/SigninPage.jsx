@@ -46,7 +46,7 @@ const SigninPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-white">
+    <div className="flex flex-col items-center justify-center h-dvh bg-white">
       <div className="w-full max-w-md px-7 py-10 space-y-5 bg-white sm:shadow-lg md:shadow-none rounded-lg">
         <TopLogo />
 
