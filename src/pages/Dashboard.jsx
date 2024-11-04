@@ -4,7 +4,8 @@ import WaterChart from "../components/home/WaterChart";
 import { getItem } from "../utils/localStorage";
 
 const Dashboard = () => {
-  const expenseAmt = Object.values(getItem("expense"));
+  const expenseData = getItem("expense");
+  const expenseAmt = expenseData ? Object.values(expenseData) : [];
 
   return (
     <>
