@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import AddExpensePage from "./pages/AddExpensePage";
 import NotificationPage from "./pages/NotificationPage";
 import SettingsPage from "./pages/SettingsPage";
+import { NotificationProvider } from "./context/NotificationContext";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -59,9 +60,11 @@ const App = () => {
     },
   ]);
   return (
-    <div className="md:px-[35%] md:bg-gray-100">
-      <RouterProvider router={router} />
-    </div>
+    <NotificationProvider>
+      <div className="md:px-[35%] md:bg-gray-100">
+        <RouterProvider router={router} />
+      </div>
+    </NotificationProvider>
   );
 };
 
