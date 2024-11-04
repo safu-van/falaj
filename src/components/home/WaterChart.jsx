@@ -13,17 +13,47 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
 
 const WaterChart = () => {
   const data = {
-    labels: ["January", "February", "March", "April", "May"],
+    labels: [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
     datasets: [
       {
-        data: [10000, 20000, 50000, 40000, 30000],
-        backgroundColor: "#4A90E2",
+        data: [
+          3600, 3600, 4200, 4800, 6000, 6600, 7200, 7200, 6000, 5400, 4200,
+          4200,
+        ],
+        backgroundColor: [
+          "#4A90E2",
+          "#A3C9F1",
+          "#4A90E2",
+          "#A3C9F1",
+          "#4A90E2",
+          "#A3C9F1",
+          "#4A90E2",
+          "#A3C9F1",
+          "#4A90E2",
+          "#A3C9F1",
+          "#4A90E2",
+          "#A3C9F1",
+        ],
       },
     ],
   };
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: { display: false },
       title: {
@@ -48,10 +78,22 @@ const WaterChart = () => {
     },
     scales: {
       x: { type: "category" },
+      y: {
+        beginAtZero: true,
+        min: 0,
+        max: 8000,
+        ticks: {
+          stepSize: 1000,
+        },
+      },
     },
   };
 
-  return <Bar data={data} options={options} />;
+  return (
+    <div style={{ height: "270px" }}>
+      <Bar data={data} options={options} />
+    </div>
+  );
 };
 
 export default WaterChart;
