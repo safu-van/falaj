@@ -5,7 +5,7 @@ import { getItem } from "../utils/localStorage";
 
 const Dashboard = () => {
   const expenseData = getItem("expense");
-  const expenseAmt = expenseData ? Object.values(expenseData) : [];
+  const expenseAmt = expenseData ? Object.values(expenseData) : [0, 0, 0];
 
   return (
     <>
