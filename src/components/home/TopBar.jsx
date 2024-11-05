@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { IoIosLogOut } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { setItem } from "../../utils/localStorage";
+import { CropTypeContext } from "../../context/CropTypeContext";
 
 const TopBar = () => {
   const navigate = useNavigate();
-  const [selectedValue, setSelectedValue] = useState("");
+  const { cropType, setCropType } = useContext(CropTypeContext);
 
   const handleLogout = () => {
     setItem("isAuthenticated", false);
@@ -13,7 +14,7 @@ const TopBar = () => {
   };
 
   const handleSelectChange = (event) => {
-    setSelectedValue(event.target.value);
+    setCropType(event.target.value);
   };
 
   return (
@@ -23,7 +24,7 @@ const TopBar = () => {
       </span>
       <div className="flex space-x-5">
         <select
-          value={selectedValue}
+          value={cropType}
           onChange={handleSelectChange}
           className="bg-[#024639] text-white  px-1 focus:outline-none text-center"
         >

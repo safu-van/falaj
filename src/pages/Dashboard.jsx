@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import ExpenseChart from "../components/home/ExpenseChart";
 import WaterChart from "../components/home/WaterChart";
 import { getItem } from "../utils/localStorage";
+import { CropTypeContext } from "../context/CropTypeContext";
 
 const Dashboard = () => {
+  const { cropType } = useContext(CropTypeContext);
   const expenseData = getItem("expense");
-  const expenseAmt = expenseData ? Object.values(expenseData) : [0, 0, 0];
+  const expenseAmt =
+    expenseData && expenseData[cropType]
+      ? Object.values(expenseData[cropType])
+      : [0, 0, 0];
 
   return (
     <>

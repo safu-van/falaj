@@ -2,13 +2,21 @@ import React, { useState } from "react";
 import { usePersistedState } from "../hooks/usePersistedState";
 
 const AddExpensePage = () => {
+  const [cropType, setCropType] = useState("");
   const [expenseType, setExpenseType] = useState("");
   const [amount, setAmount] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [expense, setExpense] = usePersistedState("expense", {
-    electricity: 0,
-    fertilizer: 0,
-    other: 0,
+    tomato: {
+      electricity: 0,
+      fertilizer: 0,
+      other: 0,
+    },
+    watermelon: {
+      electricity: 0,
+      fertilizer: 0,
+      other: 0,
+    },
   });
 
   const handleSubmit = (e) => {
@@ -21,13 +29,16 @@ const AddExpensePage = () => {
       return;
     }
 
-    setExpense((prevExp) => ({
-      ...prevExp,
-      [expenseType]: prevExp[expenseType] + expAmt,
+    setExpense((prevExpenses) => ({
+      ...prevExpenses,
+      [cropType]: {
+        ...prevExpenses[cropType],
+        [expenseType]: prevExpenses[cropType][expenseType] + expAmt,
+      },
     }));
 
-    setExpenseType("")
-    setAmount("")
+    setExpenseType("");
+    setAmount("");
   };
 
   return (
@@ -40,6 +51,22 @@ const AddExpensePage = () => {
         <form onSubmit={handleSubmit} className="mt-7 mb-3 px-5">
           <div className="mb-4">
             <select
+              id="cropType"
+              value={cropType}
+              onChange={(e) => setCropType(e.target.value)}
+              className="block w-full border border-gray-300 focus:border-green-600 focus:outline-none rounded-md p-2"
+              required
+            >
+              <option value="" disabled>
+                Select Crop
+              </option>
+              <option value="tomato">Tomato</option>
+              <option value="watermelon">Watermelon</option>
+            </select>
+          </div>
+
+          <div className="mb-4">
+            <select
               id="expenseType"
               value={expenseType}
               onChange={(e) => setExpenseType(e.target.value)}
@@ -47,7 +74,7 @@ const AddExpensePage = () => {
               required
             >
               <option value="" disabled>
-                Select an expense type
+                Select an Expense Type
               </option>
               <option value="electricity">Electricity</option>
               <option value="fertilizer">Fertilizer</option>
