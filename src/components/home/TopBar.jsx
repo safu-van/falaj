@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoIosLogOut } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { setItem } from "../../utils/localStorage";
 
 const TopBar = () => {
   const navigate = useNavigate();
+  const [selectedValue, setSelectedValue] = useState("");
 
   const handleLogout = () => {
     setItem("isAuthenticated", false);
     navigate("/signin");
+  };
+
+  const handleSelectChange = (event) => {
+    setSelectedValue(event.target.value);
   };
 
   return (
@@ -16,10 +21,21 @@ const TopBar = () => {
       <span className="text-gray-300 text-md">
         Hello, <span className="text-white font-semibold text-xl">Admin</span>
       </span>
-      <IoIosLogOut
-        className="text-white text-2xl cursor-pointer"
-        onClick={handleLogout}
-      />
+      <div className="flex space-x-5">
+        <select
+          value={selectedValue}
+          onChange={handleSelectChange}
+          className="bg-[#024639] text-white  px-1 focus:outline-none text-center"
+        >
+          <option value="tomato">Tomato</option>
+          <option value="watermelon">Watermelon</option>
+        </select>
+
+        <IoIosLogOut
+          className="text-white text-2xl cursor-pointer"
+          onClick={handleLogout}
+        />
+      </div>
     </div>
   );
 };

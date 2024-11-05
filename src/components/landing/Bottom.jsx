@@ -31,7 +31,7 @@ const Bottom = ({ page }) => {
         <span className="text-[#eaf0ee] text-lg">{heading}</span>
         <span className="text-gray-400 text-md mt-4">{description}</span>
 
-        <div className="flex items-center h-full justify-between mt-10">
+        <div className="flex items-center h-full justify-between mt-5">
           {page < 3 ? (
             <>
               <div className="flex space-x-1.5">
